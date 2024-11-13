@@ -23,7 +23,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
-                {["About", "Careers", "History", "Services", "Projects", "Blog"].map((item) => (
+                {["Quiz", "Shop", "Top 100", "Challenge", "Achievement", "Blog"].map((item) => (
                   <li key={item}>
                     <a
                       className="text-purple transition hover:text-purple/75"
