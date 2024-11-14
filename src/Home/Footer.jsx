@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-blue text-periwinkle py-8">
+    <footer className="bg-coral text-purple py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Colonna Informazioni */}
@@ -17,33 +17,33 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
-                  Chi Siamo
+                  Terms & Condition
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
-                  Servizi
+                  Newsletter
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
-                  Contatti
+                  Contacts
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
-                  Lavora con Noi
+                  Promo
                 </a>
               </li>
             </ul>
@@ -56,7 +56,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
                   Blog
                 </a>
@@ -64,15 +64,15 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
-                  Documentazione
+                  Shop
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
                   FAQ
                 </a>
@@ -80,50 +80,61 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-periwinkle hover:text-purple transition"
+                  className="text-dark-blue hover:text-lilac transition"
                 >
-                  Supporto
+                  Support
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Colonna Social */}
+          {/* Colonna Navigazione */}
           <div>
-            <h2 className="text-lilac font-bold text-lg mb-4">Seguici</h2>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-periwinkle hover:text-purple transition"
-              >
-                <FaFacebookF size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-periwinkle hover:text-purple transition"
-              >
-                <FaTwitter size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-periwinkle hover:text-purple transition"
-              >
-                <FaInstagram size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-periwinkle hover:text-purple transition"
-              >
-                <FaLinkedinIn size={24} />
-              </a>
-            </div>
-          </div>
+
+          <h2 className="text-lilac font-bold text-lg mb-4">Navigazione</h2>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  className="text-dark-blue hover:text-lilac transition"
+                >
+                  Quizz Archive
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-dark-blue hover:text-lilac transition"
+                >
+                  Challenge
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-dark-blue hover:text-lilac transition"
+                >
+                  Achievement
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-dark-blue hover:text-lilac transition"
+                >
+                  Top Players
+                </a>
+              </li>
+              </ul>
+              </div>
+
+          
+         
         </div>
 
         <div className="border-t border-lilac mt-8 pt-4 text-center text-sm">
-          <p className="text-periwinkle">
-            &copy; {new Date().getFullYear()} Quizzies. Tutti i diritti
-            riservati.
+          <p className="text-dark-blue">
+            &copy; {new Date().getFullYear()} Quizzies. All rights reserved.
           </p>
         </div>
       </div>
