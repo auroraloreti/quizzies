@@ -20,10 +20,58 @@ export default function Navbar() {
             </a>
           </div>
 
+          {/* barra di ricerca */}
+          <div class="relative">
+  <label htmlFor="Search" class="sr-only">
+    Search
+  </label>
+
+  <input
+    type="text"
+    id="Search"
+    placeholder="Search for..."
+    class="w-75 rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm "
+  />
+
+  <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
+    <button
+      type="button"
+      class="text-gray-600 hover:text-gray-700"
+    >
+      <span class="sr-only">Search</span>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"   
+
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        class="size-4"   
+
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+        />
+      </svg>
+    </button>
+  </span>   
+
+</div>
+
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
-                {["Quiz", "Shop", "Top 100", "Challenge", "Achievement", "Blog"].map((item) => (
+                {[
+                  "Quiz",
+                  "Shop",
+                  "Top 100",
+                  "Challenge",
+                  "Achievement",
+                  "Blog",
+                ].map((item) => (
                   <li key={item}>
                     <a
                       className="text-purple transition hover:text-purple/75"
@@ -66,7 +114,11 @@ export default function Navbar() {
                   stroke="currentColor"
                   strokeWidth="2"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               </button>
             </div>
