@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FaHeart } from "react-icons/fa";
+import Carousel from "./Carosello";
+
 
 const quizPopolari = [
   { id: 1, title: "Quiz di Matematica", likes: 120 },
@@ -115,6 +117,11 @@ export default function Home() {
           ))}
         </Swiper>
       </section>
+
+      <Carousel/>
+
+      
+
     </div>
   );
 }
