@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FaHeart } from "react-icons/fa";
-import Carousel from "./Carosello"; // Assumendo che Carosello sia un componente valido
+import Carousel from "./Carosello";
+import CarouselDarkVariant from "./Banners";
 
 // Dati dei Quiz
 const quizPopolari = [
@@ -183,7 +184,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Carosello Personalizzato */}
+      {/* Top10 player */}
       <Carousel />
     </div>
   );
