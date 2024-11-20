@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FaHeart } from "react-icons/fa";
-
+import Carousel from "./Carosello"; // Assumendo che Carosello sia un componente valido
 
 // Dati dei Quiz
 const quizPopolari = [
