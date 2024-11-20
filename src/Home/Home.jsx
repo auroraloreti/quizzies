@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FaHeart } from "react-icons/fa";
 
+
 // Dati dei Quiz
 const quizPopolari = [
   { id: 1, title: "Quiz di Matematica", likes: 120 },
@@ -101,7 +102,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Sezione Quiz Popolari */}
+      {/* Carosello Quiz Popolari */}
       <section id="quiz-popular" className="mb-8">
         <h2 className="text-2xl font-bold text-purple mb-4">Quiz Popolari</h2>
         <Swiper
@@ -131,7 +132,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Sezione Quiz Recenti */}
+      {/* Carosello Quiz Recenti */}
       <section id="quiz-recent" className="mb-8">
         <h2 className="text-2xl font-bold text-purple mb-4">Quiz Recenti</h2>
         <Swiper
@@ -161,7 +162,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Sezione Post di Facebook */}
+      {/* Carosello Post di Facebook */}
       <section id="facebook-posts" className="mb-8">
         <h2 className="text-2xl font-bold text-purple mb-4">Post di Facebook</h2>
         <Swiper
@@ -181,6 +182,9 @@ export default function Home() {
           ))}
         </Swiper>
       </section>
+
+      {/* Carosello Personalizzato */}
+      <Carousel />
     </div>
   );
 }
