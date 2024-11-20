@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FaHeart } from "react-icons/fa";
-import Carousel from "./Carosello"; // Assumendo che Carosello sia un componente valido
+
 
 // Dati dei Quiz
 const quizPopolari = [
@@ -102,7 +102,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Carosello Quiz Popolari */}
+      {/* Sezione Quiz Popolari */}
       <section id="quiz-popular" className="mb-8">
         <h2 className="text-2xl font-bold text-purple mb-4">Quiz Popolari</h2>
         <Swiper
@@ -132,7 +132,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Carosello Quiz Recenti */}
+      {/* Sezione Quiz Recenti */}
       <section id="quiz-recent" className="mb-8">
         <h2 className="text-2xl font-bold text-purple mb-4">Quiz Recenti</h2>
         <Swiper
@@ -162,7 +162,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Carosello Post di Facebook */}
+
       <section id="facebook-posts" className="mb-8">
         <h2 className="text-2xl font-bold text-purple mb-4">Post di Facebook</h2>
         <Swiper
@@ -183,8 +183,6 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Carosello Personalizzato */}
-      <Carousel />
     </div>
   );
 }
