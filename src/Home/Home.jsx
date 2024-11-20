@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FaHeart } from "react-icons/fa";
 import Carousel from "./Carosello";
-import CarouselDarkVariant from "./Banners";
+import Banner from "./Banners";
+
 
 // Dati dei Quiz
 const quizPopolari = [
@@ -186,6 +187,9 @@ export default function Home() {
 
       {/* Top10 player */}
       <Carousel />
+
+      <Banner/>
+
     </div>
   );
 }
