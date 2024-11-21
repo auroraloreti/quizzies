@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Shoppies from "./Assets/Shoppies.jpg"
+import Shoppies from "../Assets/Shoppies.jpg"
 
 
 export default function Banner() {
