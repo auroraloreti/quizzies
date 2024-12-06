@@ -5,6 +5,7 @@ import "swiper/css";
 import { FaHeart } from "react-icons/fa";
 import Carousel from "./Carosello";
 import Banner from "./Banners";
+import Achievement from "./Achievment";
 
 
 // Dati dei Quiz
@@ -181,6 +182,7 @@ export default function Home() {
 
       {/* Top10 player */}
       <Carousel />
+      <Achievement/>
 
       <Banner/>
 
