@@ -5,7 +5,7 @@ import "swiper/css";
 import { FaHeart } from "react-icons/fa";
 import Carousel from "./Carosello";
 import Banner from "./Banners";
-import Achievement from "./Achievment";
+import Achievement from "./Achievement";
 
 
 // Dati dei Quiz
