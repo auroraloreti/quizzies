@@ -161,7 +161,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Top10 player e Achievement */}
+      {/* Top10 player */}
       <section className="mb-8">
         <Carousel />
       </section>
