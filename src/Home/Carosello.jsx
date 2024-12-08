@@ -13,6 +13,10 @@ function Carousel() {
       <p className="text-center text-purple text-sm sm:text-base">
         {index + 1}° posto
       </p>
+      <p className="text-center text-purple text-sm sm:text-base">
+        @nickname
+      </p>
+      
     </div>
   ));
 
