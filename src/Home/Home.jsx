@@ -7,7 +7,6 @@ import Carousel from "./Carosello";
 import Banner from "./Banners";
 import Achievement from "./Achievement";
 
-
 // Dati dei Quiz
 const quizPopolari = [
   { id: 1, title: "Quiz di Matematica", likes: 120 },
@@ -97,11 +96,14 @@ export default function Home() {
     }));
   };
 
+  const sectionTitleClasses =
+    "text-2xl sm:text-3xl md:text-4xl font-bold text-purple mb-6";
+
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Carosello Quiz Popolari */}
-      <section id="quiz-popular" className="mb-8">
-        <h2 className="text-2xl font-bold text-purple mb-4">Quiz Popolari</h2>
+      <section id="quiz-popular" className="mb-12">
+        <h2 className={sectionTitleClasses}>Quiz Popolari</h2>
         <Swiper
           slidesPerView={1}
           spaceBetween={20}
@@ -112,8 +114,8 @@ export default function Home() {
         >
           {quizPopolari.map((quiz) => (
             <SwiperSlide key={quiz.id}>
-              <div className="bg-coral p-4 rounded-md shadow-md text-center transform transition-transform hover:scale-105">
-                <h3 className="text-xl font-semibold text-dark-blue mb-2">
+              <div className="bg-coral p-4 rounded-md shadow-md text-center">
+                <h3 className="text-lg sm:text-xl font-semibold text-dark-blue mb-2">
                   {quiz.title}
                 </h3>
                 <button
@@ -121,7 +123,7 @@ export default function Home() {
                   onClick={() => handleLike(quiz.id)}
                 >
                   <FaHeart className="text-lilac" />
-                  <span>{likes[quiz.id]}</span>
+                  <span className="text-sm sm:text-base">{likes[quiz.id]}</span>
                 </button>
               </div>
             </SwiperSlide>
@@ -130,8 +132,8 @@ export default function Home() {
       </section>
 
       {/* Carosello Quiz Recenti */}
-      <section id="quiz-recent" className="mb-8">
-        <h2 className="text-2xl font-bold text-purple mb-4">Quiz Recenti</h2>
+      <section id="quiz-recent" className="mb-12">
+        <h2 className={sectionTitleClasses}>Quiz Recenti</h2>
         <Swiper
           slidesPerView={1}
           spaceBetween={20}
@@ -142,8 +144,8 @@ export default function Home() {
         >
           {quizRecenti.map((quiz) => (
             <SwiperSlide key={quiz.id}>
-              <div className="bg-periwinkle p-4 rounded-md shadow-md text-center transform transition-transform hover:scale-105">
-                <h3 className="text-xl font-semibold text-dark-blue mb-2">
+              <div className="bg-periwinkle p-4 rounded-md shadow-md text-center">
+                <h3 className="text-lg sm:text-xl font-semibold text-dark-blue mb-2">
                   {quiz.title}
                 </h3>
                 <button
@@ -151,7 +153,7 @@ export default function Home() {
                   onClick={() => handleLike(quiz.id)}
                 >
                   <FaHeart className="text-lilac" />
-                  <span>{likes[quiz.id]}</span>
+                  <span className="text-sm sm:text-base">{likes[quiz.id]}</span>
                 </button>
               </div>
             </SwiperSlide>
@@ -159,12 +161,27 @@ export default function Home() {
         </Swiper>
       </section>
 
+      {/* Top10 player e Achievement */}
+      <section className="mb-8">
+        <Carousel />
+      </section>
+
+      {/* Achievement */}
+      <section className="mb-8">
+        <Achievement />
+      </section>
+
+      {/* Banner */}
+      <section className="mb-8">
+        <Banner />
+      </section>
+
       {/* Carosello Post di Facebook */}
-      <section id="facebook-posts" className="mb-8">
-        <h2 className="text-2xl font-bold text-purple mb-4">Post di Facebook</h2>
+      <section id="facebook-posts" className="mb-5">
+        <h2 className={sectionTitleClasses}>Post di Facebook</h2>
         <Swiper
           slidesPerView={1}
-          spaceBetween={20}
+          spaceBetween={0}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -172,20 +189,13 @@ export default function Home() {
         >
           {facebookPosts.map((post) => (
             <SwiperSlide key={post.id}>
-              <div className="bg-white p-4 rounded-md shadow-md text-center transform transition-transform hover:scale-105">
+              <div className="bg-white p-4 w-full h-[700px] text-center">
                 {post.iframe}
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </section>
-
-      {/* Top10 player */}
-      <Carousel />
-      <Achievement/>
-
-      <Banner/>
-
     </div>
   );
 }

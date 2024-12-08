@@ -1,9 +1,24 @@
+import { useState } from "react";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    "Quiz",
+    "Shop",
+    "Top 100",
+    "Challenge",
+    "Achievement",
+    "Blog",
+  ];
+
   return (
     <header className="bg-coral">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="md:flex md:items-center md:gap-12">
+          {/* LOGO */}
+          <div className="flex items-center">
             <a className="block text-purple" href="#">
               <span className="sr-only">Home</span>
               <svg
@@ -20,58 +35,35 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* barra di ricerca */}
-          <div class="relative">
-  <label htmlFor="Search" class="sr-only">
-    Search
-  </label>
+          {/* SEARCH BAR */}
+          <div className="hidden sm:block relative mx-4 max-w-sm w-full">
+            <label htmlFor="Search" className="sr-only">
+              Search
+            </label>
 
-  <input
-    type="text"
-    id="Search"
-    placeholder="Search for..."
-    class="w-75 rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm "
-  />
+            <input
+              type="text"
+              id="Search"
+              placeholder="Search for..."
+              className="w-full rounded-md border border-gray-200 py-2.5 pr-10 pl-3 shadow-sm sm:text-sm focus:outline-none focus:border-purple"
+            />
 
-  <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
-    <button
-      type="button"
-      class="text-gray-600 hover:text-gray-700"
-    >
-      <span class="sr-only">Search</span>
+            <span className="absolute inset-y-0 right-0 flex items-center pr-3">
+              <button
+                type="button"
+                className="text-gray-600 hover:text-gray-700"
+              >
+                <span className="sr-only">Search</span>
+                <FaSearch className="h-5 w-5" />
+              </button>
+            </span>
+          </div>
 
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"   
-
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        class="size-4"   
-
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-        />
-      </svg>
-    </button>
-  </span>   
-
-</div>
-
+          {/* Desktop */}
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
-                {[
-                  "Quiz",
-                  "Shop",
-                  "Top 100",
-                  "Challenge",
-                  "Achievement",
-                  "Blog",
-                ].map((item) => (
+                {navItems.map((item) => (
                   <li key={item}>
                     <a
                       className="text-purple transition hover:text-purple/75"
@@ -85,45 +77,91 @@ export default function Navbar() {
             </nav>
           </div>
 
+          
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
+            <div className="hidden sm:flex sm:gap-4">
               <a
-                className="rounded-md bg-purple px-5 py-2.5 text-sm font-medium text-white shadow"
+                className="rounded-md bg-purple px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-purple/90 transition"
                 href="#"
               >
                 Login
               </a>
-
-              <div className="hidden sm:flex">
-                <a
-                  className="rounded-md bg-lilac px-5 py-2.5 text-sm font-medium text-white"
-                  href="#"
-                >
-                  Register
-                </a>
-              </div>
+              <a
+                className="rounded-md bg-lilac px-5 py-2.5 text-sm font-medium text-white hover:bg-lilac/90 transition"
+                href="#"
+              >
+                Register
+              </a>
             </div>
 
-            <div className="block md:hidden">
-              <button className="rounded bg-gray-100 p-2 text-purple transition hover:text-purple/75">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
+            <button
+              className="block md:hidden rounded bg-gray-100 p-2 text-purple transition hover:text-purple/75"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <FaTimes className="h-5 w-5" />
+              ) : (
+                <FaBars className="h-5 w-5" />
+              )}
+            </button>
           </div>
         </div>
+
+        {/* MOBILE MENU */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 space-y-4">
+            <div className="relative">
+              <label htmlFor="MobileSearch" className="sr-only">
+                Search
+              </label>
+              <input
+                type="text"
+                id="MobileSearch"
+                placeholder="Search for..."
+                className="w-full rounded-md border border-gray-200 py-2.5 pr-10 pl-3 shadow-sm sm:text-sm focus:outline-none focus:border-purple"
+              />
+              <span className="absolute inset-y-0 right-0 flex items-center pr-3">
+                <button
+                  type="button"
+                  className="text-gray-600 hover:text-gray-700"
+                >
+                  <span className="sr-only">Search</span>
+                  <FaSearch className="h-5 w-5" />
+                </button>
+              </span>
+            </div>
+
+            <nav aria-label="Global" className="border-t border-purple pt-4">
+              <ul className="flex flex-col gap-4 text-sm">
+                {navItems.map((item) => (
+                  <li key={item}>
+                    <a
+                      className="block text-purple transition hover:text-purple/75"
+                      href="#"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="flex flex-col gap-2 border-t border-purple pt-4">
+              <a
+                className="rounded-md bg-purple px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-purple/90 transition text-center"
+                href="#"
+              >
+                Login
+              </a>
+              <a
+                className="rounded-md bg-lilac px-5 py-2.5 text-sm font-medium text-white hover:bg-lilac/90 transition text-center"
+                href="#"
+              >
+                Register
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

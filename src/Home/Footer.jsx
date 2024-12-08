@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-coral text-purple py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Colonna Informazioni */}
           <div>
             <h2 className="text-lilac font-bold text-lg mb-4">Informazioni</h2>
@@ -19,7 +19,7 @@ export default function Footer() {
                   href="#"
                   className="text-dark-blue hover:text-lilac transition"
                 >
-                  Terms & Condition
+                  Terms & Conditions
                 </a>
               </li>
               <li>
@@ -90,9 +90,8 @@ export default function Footer() {
 
           {/* Colonna Navigazione */}
           <div>
-
-          <h2 className="text-lilac font-bold text-lg mb-4">Navigazione</h2>
-            <ul className="space-y-2">
+            <h2 className="text-lilac font-bold text-lg mb-4">Navigazione</h2>
+            <ul className="space-y-2 mb-6">
               <li>
                 <a
                   href="#"
@@ -125,11 +124,36 @@ export default function Footer() {
                   Top Players
                 </a>
               </li>
-              </ul>
-              </div>
+            </ul>
 
-          
-         
+            {/* Sezione Social */}
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="text-dark-blue hover:text-lilac transition"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="#"
+                className="text-dark-blue hover:text-lilac transition"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="#"
+                className="text-dark-blue hover:text-lilac transition"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="#"
+                className="text-dark-blue hover:text-lilac transition"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-lilac mt-8 pt-4 text-center text-sm">
