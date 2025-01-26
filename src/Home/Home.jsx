@@ -169,6 +169,8 @@ export default function Home() {
       {/* Achievement */}
       <section className="mb-8">
         <Achievement />
+        <Achievement />
+        <Achievement />
       </section>
 
       {/* Banner */}
