@@ -5,12 +5,12 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    "Quiz",
-    "Shop",
-    "Top 100",
-    "Challenge",
-    "Achievement",
-    "Blog",
+    { name: "Quiz", path: "/quiz" },
+    { name: "Shop", path: "/shop" },
+    { name: "Top 100", path: "/top-100" },
+    { name: "Challenge", path: "/challenge" },
+    { name: "Achievement", path: "/achievement" },
+    { name: "Blog", path: "/blog" },
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* LOGO */}
           <div className="flex items-center">
-            <a className="block text-purple" href="#">
+            <a className="block text-purple" href="/">
               <span className="sr-only">Home</span>
               <svg
                 className="h-8"
@@ -59,17 +59,17 @@ export default function Navbar() {
             </span>
           </div>
 
-          {/* Desktop */}
+          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
                 {navItems.map((item) => (
-                  <li key={item}>
+                  <li key={item.name}>
                     <a
                       className="text-purple transition hover:text-purple/75"
-                      href="#"
+                      href={item.path}
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -77,18 +77,18 @@ export default function Navbar() {
             </nav>
           </div>
 
-          
+          {/* Authentication Buttons and Mobile Menu Toggle */}
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex sm:gap-4">
               <a
                 className="rounded-md bg-purple px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-purple/90 transition"
-                href="#"
+                href="/login"
               >
                 Login
               </a>
               <a
                 className="rounded-md bg-lilac px-5 py-2.5 text-sm font-medium text-white hover:bg-lilac/90 transition"
-                href="#"
+                href="/register"
               >
                 Register
               </a>
@@ -97,6 +97,7 @@ export default function Navbar() {
             <button
               className="block md:hidden rounded bg-gray-100 p-2 text-purple transition hover:text-purple/75"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
             >
               {isMenuOpen ? (
                 <FaTimes className="h-5 w-5" />
@@ -110,6 +111,7 @@ export default function Navbar() {
         {/* MOBILE MENU */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4">
+            {/* Mobile Search */}
             <div className="relative">
               <label htmlFor="MobileSearch" className="sr-only">
                 Search
@@ -131,31 +133,33 @@ export default function Navbar() {
               </span>
             </div>
 
+            {/* Mobile Navigation */}
             <nav aria-label="Global" className="border-t border-purple pt-4">
               <ul className="flex flex-col gap-4 text-sm">
                 {navItems.map((item) => (
-                  <li key={item}>
+                  <li key={item.name}>
                     <a
                       className="block text-purple transition hover:text-purple/75"
-                      href="#"
+                      href={item.path}
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </nav>
 
+            {/* Mobile Authentication Buttons */}
             <div className="flex flex-col gap-2 border-t border-purple pt-4">
               <a
                 className="rounded-md bg-purple px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-purple/90 transition text-center"
-                href="#"
+                href="/login"
               >
                 Login
               </a>
               <a
                 className="rounded-md bg-lilac px-5 py-2.5 text-sm font-medium text-white hover:bg-lilac/90 transition text-center"
-                href="#"
+                href="/register"
               >
                 Register
               </a>
